@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="800.0" style="-fx-background-color: #404040;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
+   <top>
+      <HBox alignment="CENTER" spacing="15.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label style="-fx-text-fill: white;" text="Name:">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="nameField" style="-fx-background-color: #888888;">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TextField>
+            <Label style="-fx-text-fill: white;" text="Server Address:" />
+            <TextField fx:id="ipField" style="-fx-background-color: #888888;" />
+            <Button fx:id="connectButton" mnemonicParsing="false" onAction="#doConnect" style="-fx-background-color: #202020; -fx-text-fill: white;" text="Connect">
+               <effect>
+                  <Reflection />
+               </effect></Button>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
+   </top>
+   <bottom>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="textArea" prefHeight="200.0" prefWidth="200.0" style="-fx-control-inner-background: #303030; -fx-border-color: #006bb3; -fx-text-fill:  #ff8000; -fx-region-background: null;" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <TextField fx:id="typeTheTextField" prefHeight="31.0" prefWidth="585.0" style="-fx-text-fill: #ff8000; -fx-background-color: #303030;" />
+                  <Button mnemonicParsing="false" onAction="#addListenerForTextArea" style="-fx-background-color: #202020; -fx-text-fill: white;" text="Send">
+                     <effect>
+                        <InnerShadow />
+                     </effect></Button>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </bottom>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="680.0" prefWidth="781.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="98.0" prefWidth="809.0" spacing="10.0" style="-fx-background-color: #484848;">
+                     <children>
+                        <Label contentDisplay="CENTER" style="-fx-text-fill: white;" text="Your sign: ">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="5.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="yourSignLabel" style="-fx-text-fill: #ff8000;" text="sign">
+                           <HBox.margin>
+                              <Insets bottom="10.0" right="5.0" top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Pane prefHeight="563.0" prefWidth="812.0" style="-fx-background-color: #484848;">
+                     <children>
+                        <GridPane fx:id="gridPane" layoutX="109.0" prefHeight="563.0" prefWidth="563.0" style="-fx-control-inner-background: #303030;">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </GridPane>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </Pane>
+   </center>
+</BorderPane>
